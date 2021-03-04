@@ -30,3 +30,30 @@ export const SearchButton = styled.button`
   border: none;
   cursor: pointer;
 `
+
+export const RepoItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0 0 20px;
+  div.left-side {
+    flex: 1;
+    h3 {
+      display: inline;
+      font-weight: 600;
+    }
+    span {
+      font-style: italic;
+    }
+    p {
+      padding-top: 5px;
+      font-weight: 300;
+    }
+  }
+  div.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+  }
+`

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${p => p.theme.pallete.background.main};
   color: ${p => p.theme.pallete.background.contrast};
 `
@@ -19,6 +19,7 @@ export const AppBar = styled.div`
   h1 {
     font-size: 48px;
   }
+  z-index: 99;
 `
 
 export const Tabs = styled.div`
