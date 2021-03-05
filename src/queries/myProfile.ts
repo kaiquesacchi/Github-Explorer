@@ -11,7 +11,7 @@ export const MY_PROFILE = gql`
       followers(first: 3) {
         totalCount
         nodes {
-          name
+          login
         }
       }
     }
@@ -28,8 +28,8 @@ export interface iMyProfile {
     followers: {
       totalCount: number
       nodes: {
-        name: string
-      }
+        login: string
+      }[]
     }
   }
 }
