@@ -5,7 +5,6 @@ export const LICENSES = gql`
     licenses {
       name
       nickname
-      url
       conditions {
         label
       }
@@ -17,9 +16,10 @@ export interface iLicenses {
   licenses: {
     name: string
     nickname: string
-    url: string
-    conditions: {
-      label: string
-    }
-  }
+    conditions: iCondition[]
+  }[]
+}
+
+export interface iCondition {
+  label: string
 }

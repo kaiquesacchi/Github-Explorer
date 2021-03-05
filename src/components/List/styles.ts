@@ -8,6 +8,7 @@ export const ListBody = styled.ul`
 
 export const CollapsibleListItem = styled.li`
   width: 100%;
+  margin-top: 30px;
 `
 
 export const CollapsibleTitleArea = styled.div`

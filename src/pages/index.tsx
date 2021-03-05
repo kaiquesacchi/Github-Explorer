@@ -4,10 +4,6 @@ import * as SC from '../styles/pages/home'
 import { FiSearch, FiStar } from 'react-icons/fi'
 
 import { useLazyQuery } from '@apollo/client'
-// import {
-//   APOLLO_STATE_PROP_NAME,
-//   initializeApollo,
-// } from '../services/apollo/apolloClient'
 
 import {
   SEARCH_REPOS_AND_USERS,
@@ -95,14 +91,3 @@ export default function Home() {
     </PageLayout>
   )
 }
-
-// export const getServerSideProps = async () => {
-//   const apolloClient = initializeApollo()
-//   await apolloClient.query({
-//     query: SEARCH_FOR_REPOS,
-//     variables: {
-//       searchTerm: 'Stocker',
-//     },
-//   })
-//   return { props: { [APOLLO_STATE_PROP_NAME]: apolloClient.cache.extract() } }
-// }
