@@ -12,6 +12,7 @@ import * as SC from '../styles/pages/myProfile'
 
 export default function MyProfile() {
   const { data, loading, error } = useQuery<iMyProfile>(MY_PROFILE)
+  console.log(data)
   return (
     <PageLayout activeTab="myProfile">
       <FocusBlock>
@@ -26,8 +27,8 @@ export default function MyProfile() {
         <SC.SecondaryInfo>
           <h2>Biography</h2>
           <p>
-            {data?.viewer.bio && data?.viewer.bio.trim.length > 0
-              ? data?.viewer.bio.trim
+            {data?.viewer.bio && data?.viewer.bio.length > 0
+              ? data?.viewer.bio
               : 'Not available.'}
           </p>
           {data?.viewer.followers.totalCount &&
