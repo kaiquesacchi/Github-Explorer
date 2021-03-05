@@ -15,7 +15,7 @@ export default function List<T>({ data, renderItem }: iProps<T>) {
     <SC.ListBody>
       {Object.keys(data).map(key => (
         <CollapsibleListItem<T>
-          title="Repositories"
+          title={key}
           data={data[key]}
           renderItem={renderItem}
         ></CollapsibleListItem>

@@ -10,15 +10,16 @@ import { useLazyQuery } from '@apollo/client'
 // } from '../services/apollo/apolloClient'
 
 import {
-  SEARCH_FOR_REPOS,
-  iSearchForRepos,
+  SEARCH_REPOS_AND_USERS,
+  iSearchReposAndUsers,
   iRepoNode,
-} from '../queries/searchForRepos'
+  iUserNode,
+} from '../queries/searchReposAndUsers'
 import PageLayout from '../components/PageLayout/PageLayout'
 import FocusBlock from '../components/FocusBlock/FocusBlock'
 import List from '../components/List/List'
 
-const renderItem = ({ node }: iRepoNode) => (
+const renderRepoItem = ({ node }: iRepoNode) => (
   <SC.RepoItem>
     <div className="left-side">
       <h3>{node.name}</h3>
@@ -32,12 +33,32 @@ const renderItem = ({ node }: iRepoNode) => (
   </SC.RepoItem>
 )
 
+const renderUserItem = ({ node }: iUserNode) => (
+  <SC.UserItem>
+    <img src={node.avatarUrl} />
+    <div className="info">
+      <h3>{node.login}</h3>
+      <span>{` - ${node.name ?? 'Name is not available.'}`}</span>
+      <p>{node.bio ?? 'Biography is not available.'}</p>
+      {node.followers?.totalCount > 0 && node.followers.edges && (
+        <p>{`Followed by ${node.followers.edges
+          .map(follower => follower.node.login)
+          .join(', ')} ${
+          node.followers.totalCount > 3
+            ? ' and ' + (node.followers.totalCount - 3) + ' others'
+            : ''
+        }`}</p>
+      )}
+    </div>
+  </SC.UserItem>
+)
+
 export default function Home() {
   const [input, setInput] = useState('')
   const [
     searchRepos,
-    { data: repoData, loading, error },
-  ] = useLazyQuery<iSearchForRepos>(SEARCH_FOR_REPOS)
+    { data, loading, error },
+  ] = useLazyQuery<iSearchReposAndUsers>(SEARCH_REPOS_AND_USERS)
 
   const handleSearch = useCallback(() => {
     searchRepos({
@@ -63,8 +84,12 @@ export default function Home() {
           </SC.SearchButton>
         </SC.SearchBox>
         <List<iRepoNode>
-          data={{ Repositories: repoData?.search.edges || [] }}
-          renderItem={renderItem}
+          data={{ Repositories: data?.repos.edges || [] }}
+          renderItem={renderRepoItem}
+        />
+        <List<iUserNode>
+          data={{ Users: data?.users.edges || [] }}
+          renderItem={renderUserItem}
         />
       </FocusBlock>
     </PageLayout>
