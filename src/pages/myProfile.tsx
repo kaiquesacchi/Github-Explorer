@@ -12,7 +12,6 @@ import * as SC from '../styles/pages/myProfile'
 
 export default function MyProfile() {
   const { data, loading, error } = useQuery<iMyProfile>(MY_PROFILE)
-  console.log(data)
   return (
     <PageLayout activeTab="myProfile">
       <FocusBlock>

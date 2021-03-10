@@ -3,12 +3,12 @@ import styled from 'styled-components'
 export const ListBody = styled.ul`
   list-style-type: none;
   width: 100%;
-  margin-top: 20px;
+  padding-top: 20px;
 `
 
 export const CollapsibleListItem = styled.li`
   width: 100%;
-  margin-top: 30px;
+  padding-top: 30px;
 `
 
 export const CollapsibleTitleArea = styled.div`
