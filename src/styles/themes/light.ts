@@ -21,6 +21,10 @@ const light = {
       contrast: '#000000',
     },
   },
+  breakpoints: {
+    md: '600px',
+    sm: '350px',
+  },
 }
 
 export default light

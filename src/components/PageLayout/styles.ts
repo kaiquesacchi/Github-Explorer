@@ -9,22 +9,31 @@ export const Container = styled.div`
 `
 
 export const AppBar = styled.div`
+  z-index: 99;
   width: 100%;
   background-color: ${p => p.theme.pallete.primary.main};
   color: ${p => p.theme.pallete.primary.contrast};
   position: sticky;
   top: 0;
   padding: 10px 40px 0;
+  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+    padding: 10px 10px 0;
+  }
 
   h1 {
     font-size: 48px;
+    @media screen and (max-width: ${p => p.theme.breakpoints.md}) {
+      font-size: 30px;
+    }
   }
-  z-index: 99;
 `
 
 export const Tabs = styled.div`
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+    justify-content: space-between;
+  }
 `
 
 interface iTab {
@@ -39,6 +48,9 @@ export const Tab = styled.div<iTab>`
   color: inherit;
   font-size: 18px;
   cursor: pointer;
+  @media screen and (max-width: ${p => p.theme.breakpoints.md}) {
+    padding: 10px;
+  }
 `
 export const Content = styled.div`
   display: flex;
