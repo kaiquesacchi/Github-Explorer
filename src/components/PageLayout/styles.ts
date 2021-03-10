@@ -57,4 +57,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 30px;
+  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+    padding: 20px 10px;
+  }
 `
