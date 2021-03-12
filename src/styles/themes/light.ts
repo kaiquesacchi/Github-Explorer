@@ -1,5 +1,5 @@
 const light = {
-  pallete: {
+  palette: {
     primary: {
       main: '#1976D2',
       contrast: '#ffffff',

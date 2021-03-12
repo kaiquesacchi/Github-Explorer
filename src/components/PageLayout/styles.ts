@@ -4,15 +4,15 @@ import Link from 'next/link'
 export const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background-color: ${p => p.theme.pallete.background.main};
-  color: ${p => p.theme.pallete.background.contrast};
+  background-color: ${p => p.theme.palette.background.main};
+  color: ${p => p.theme.palette.background.contrast};
 `
 
 export const AppBar = styled.div`
   z-index: 99;
   width: 100%;
-  background-color: ${p => p.theme.pallete.primary.main};
-  color: ${p => p.theme.pallete.primary.contrast};
+  background-color: ${p => p.theme.palette.primary.main};
+  color: ${p => p.theme.palette.primary.contrast};
   position: sticky;
   top: 0;
   padding: 10px 40px 0;
@@ -44,7 +44,7 @@ export const Tab = styled.div<iTab>`
   background-color: transparent;
   border: none;
   border-bottom: 3px solid
-    ${p => (p.active ? p.theme.pallete.secondary.main : 'transparent')};
+    ${p => (p.active ? p.theme.palette.secondary.main : 'transparent')};
   color: inherit;
   font-size: 18px;
   cursor: pointer;

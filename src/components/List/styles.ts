@@ -13,6 +13,7 @@ export const CollapsibleListItem = styled.li`
 export const CollapsibleTitleArea = styled.div`
   display: grid;
   grid-template-columns: 40px 1fr;
+  grid-column-gap: 10px;
   align-items: center;
   cursor: pointer;
   svg {
@@ -30,7 +31,7 @@ export const CollapsibleContentArea = styled.div`
 export const BlackBar = styled.div`
   height: 100%;
   width: 6px;
-  background-color: ${p => p.theme.pallete.background.contrast};
+  background-color: ${p => p.theme.palette.background.contrast};
   opacity: 15%;
   justify-self: center;
   border-radius: 3px;

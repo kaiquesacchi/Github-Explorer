@@ -6,8 +6,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${p => p.theme.pallete.focusBlock.main};
-  color: ${p => p.theme.pallete.focusBlock.contrast};
+  background-color: ${p => p.theme.palette.focusBlock.main};
+  color: ${p => p.theme.palette.focusBlock.contrast};
 
   border-radius: 10px;
   box-shadow: 0px 3px 5px 0px #00000020;

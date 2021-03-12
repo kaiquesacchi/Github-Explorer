@@ -7,8 +7,8 @@ export const SearchBox = styled.div`
 `
 
 export const SearchInput = styled.input`
-  background-color: ${p => p.theme.pallete.input.main};
-  color: ${p => p.theme.pallete.input.contrast};
+  background-color: ${p => p.theme.palette.input.main};
+  color: ${p => p.theme.palette.input.contrast};
 
   width: 100%;
   height: 60px;
