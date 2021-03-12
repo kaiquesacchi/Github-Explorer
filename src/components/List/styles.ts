@@ -23,6 +23,9 @@ export const CollapsibleTitleArea = styled.div`
     font-size: 30px;
     justify-self: center;
   }
+  h2 {
+    font-weight: 400;
+  }
 `
 
 export const CollapsibleContentArea = styled.div`

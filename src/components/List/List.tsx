@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as SC from './styles'
 
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
+import { FiChevronDown, FiChevronUp, FiMinus } from 'react-icons/fi'
 
 interface iProps<T> {
   data: {
@@ -36,11 +36,21 @@ function CollapsibleListItem<T>({
   data,
   renderItem,
 }: iCollapsibleListItemProps<T>) {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <SC.CollapsibleListItem>
-      <SC.CollapsibleTitleArea onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FiChevronUp /> : <FiChevronDown />}
+      <SC.CollapsibleTitleArea
+        onClick={() => {
+          if (data.length > 0) setIsOpen(!isOpen)
+        }}
+      >
+        {data.length === 0 ? (
+          <FiMinus />
+        ) : isOpen ? (
+          <FiChevronUp />
+        ) : (
+          <FiChevronDown />
+        )}
         <h2>{title}</h2>
       </SC.CollapsibleTitleArea>
       {isOpen && (
