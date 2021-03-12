@@ -45,9 +45,12 @@ function CollapsibleListItem<T>({
       </SC.CollapsibleTitleArea>
       {isOpen && (
         <SC.CollapsibleContentArea>
-          {data.map((item, index) => (
-            <React.Fragment key={index}>{renderItem(item)}</React.Fragment>
-          ))}
+          <SC.BlackBar />
+          <div>
+            {data.map((item, index) => (
+              <React.Fragment key={index}>{renderItem(item)}</React.Fragment>
+            ))}
+          </div>
         </SC.CollapsibleContentArea>
       )}
     </SC.CollapsibleListItem>

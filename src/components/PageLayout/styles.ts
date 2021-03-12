@@ -16,7 +16,7 @@ export const AppBar = styled.div`
   position: sticky;
   top: 0;
   padding: 10px 40px 0;
-  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+  @media screen and (max-width: ${p => p.theme.breakpoints.xs}) {
     padding: 10px 10px 0;
   }
 
@@ -31,7 +31,7 @@ export const AppBar = styled.div`
 export const Tabs = styled.div`
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+  @media screen and (max-width: ${p => p.theme.breakpoints.xs}) {
     justify-content: space-between;
   }
 `
@@ -57,7 +57,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+  @media screen and (max-width: ${p => p.theme.breakpoints.xs}) {
     padding: 20px 10px;
   }
 `

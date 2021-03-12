@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SearchBox = styled.div`
   width: 100%;
   position: relative;
+  padding-bottom: 20px;
 `
 
 export const SearchInput = styled.input`
@@ -34,7 +35,10 @@ export const SearchButton = styled.button`
 const ListItem = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 30px 0 0 20px;
+  padding-bottom: 30px;
+  :last-child {
+    padding-bottom: 0;
+  }
 `
 
 export const RepoItem = styled(ListItem)`
@@ -67,6 +71,11 @@ export const UserItem = styled(ListItem)`
     width: 100px;
     height: 100px;
     border-radius: 50px;
+    @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+    }
   }
   h3 {
     display: inline;
@@ -78,19 +87,6 @@ export const UserItem = styled(ListItem)`
   p {
     padding-top: 5px;
     font-weight: 300;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    /* This is the dangerous one in WebKit, as it breaks things wherever */
-    word-break: break-all;
-    /* Instead use this non-standard one: */
-    word-break: break-word;
-
-    /* Adds a hyphen where the word breaks, if supported (No Blink) */
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
   }
   div.info {
     padding: 10px 0 10px 30px;

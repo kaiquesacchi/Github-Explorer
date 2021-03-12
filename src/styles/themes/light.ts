@@ -23,7 +23,8 @@ const light = {
   },
   breakpoints: {
     md: '600px',
-    sm: '350px',
+    sm: '450px',
+    xs: '350px',
   },
 }
 

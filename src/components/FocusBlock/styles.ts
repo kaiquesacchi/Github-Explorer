@@ -13,7 +13,7 @@ export const Container = styled.div`
   box-shadow: 0px 3px 5px 0px #00000020;
 
   padding: 50px;
-  @media screen and (max-width: ${p => p.theme.breakpoints.sm}) {
+  @media screen and (max-width: ${p => p.theme.breakpoints.xs}) {
     padding: 20px;
   }
 `
