@@ -38,7 +38,6 @@ export const Avatar = styled.img`
 `
 export const SecondaryInfo = styled.div`
   width: 100%;
-  padding-top: 40px;
   h2 {
     font-weight: 300;
     padding-bottom: 10px;

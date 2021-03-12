@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const SearchBox = styled.div`
   width: 100%;
   position: relative;
-  padding-bottom: 20px;
 `
 
 export const SearchInput = styled.input`
